@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basics Of React</title>
+  </head>
+  <body style="background-color: #555; color: white">
+    <div id="root">
+      <!-- //prinitng hello using HTML -->
+      <!-- <h1>Hello From HTML... </h1> -->
+    </div>
+
+    <!-- <script>
+
+        // Printing Hello from Javascript
+        const message =  document.createElement('h1');
+        message.innerHTML = "Hello from Javascript...";
+        const root = document.getElementById('root');
+        root.appendChild(message);
+
+    </script> -->
+
+    <!-- CDN Links to use react  -->
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script>
+      //   const msg = React.createElement("h1", {}, "Hello from React...");
+      //   const root = ReactDOM.createRoot(document.getElementById("root"));
+      //   root.render(msg);
+
+      <!-- //Why Using CDN links to write react code is a bad practice let's see -->
+      //   Example2;
+      //you can see for showing only two headings on web paage our code is already looking to complex and difficult to read and understand 
+      //this is why we use jsx.. 
+      const msg2 = React.createElement(
+        "div",
+        { id: "parent" },
+        React.createElement(
+          "div",
+          { id: "child" }, // Notice how we structure the children here
+          [
+            React.createElement(
+              "h1",
+              { id: "greeting" },
+              "Hello from React..."
+            ),
+            React.createElement(
+              "h2",
+              { id: "greeting2" },
+              "Hello from React Heading 2..."
+            ),
+          ]
+        )
+      );
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(msg2);
+    </script>
+  </body>
+</html>
