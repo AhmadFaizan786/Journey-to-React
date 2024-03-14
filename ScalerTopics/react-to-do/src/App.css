@@ -37,6 +37,8 @@ h1{
   font-size: 1.5rem;
   background-color: #E63946;
   margin-top: 10px;
+  color: white;
+  /* border: 1px solid white; */
 }
 
 .container{
@@ -69,8 +71,9 @@ h1{
 .action-btn > button{
   width: 75px;
   height: 30px;
-  color: black;
+  color: white;
   background-color: #E63946;
+  border: 1px solid white;
   border-radius: 100px;
   font-size: large;
 }
