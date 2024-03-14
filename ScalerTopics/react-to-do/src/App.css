@@ -1,0 +1,133 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.909);
+  background-color: #457B9d;
+}
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1{
+  text-align: center;
+  font-size: 3.2em;
+}
+
+.input-container > input{
+  width: 300px;
+  height: 30px;
+  font-size: 1.25rem;
+}
+
+.input-container > button{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background-color: #E63946;
+  margin-top: 10px;
+}
+
+.container{
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tasks{
+  width: 500px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  padding: 0 5px;
+}
+
+.action-btn{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.action-btn > button{
+  width: 75px;
+  height: 30px;
+  color: black;
+  background-color: #E63946;
+  border-radius: 100px;
+  font-size: large;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
