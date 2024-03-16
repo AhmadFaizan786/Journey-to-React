@@ -14,7 +14,7 @@ function App() {
   return (
     <>
     <Form/>
-      {/* <Hello/>
+      <Hello/>
       <Bye/>
       <Info name = 'Faizan' No = '1234567890' email = 'faizan@gmail.com' />
       <Info name = 'Divyam' No = '1234567890' email = 'Divyam@gmail.com' />
@@ -23,7 +23,7 @@ function App() {
       <Cars/>
       <Fruits/>
       <Message/>
-      <Counter/> */}
+      <Counter/>
     </>
   )
 }
