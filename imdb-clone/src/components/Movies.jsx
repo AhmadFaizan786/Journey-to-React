@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Pagination from "./Pagination";
 
-function Movies() {
+function Movies({handleAddToWatchList, handleDeleteFromWatchlist,watchlist}) {
   const [movies, setmovies] = useState([]);
   const [pageNo, setpageNo] = useState(1);
 
@@ -37,9 +37,13 @@ function Movies() {
         {movies.map((movieObj) => {
           return (
             <MovieCard
+            watchlist={watchlist}
+              movieObj={movieObj}
               poster_path={movieObj.poster_path}
               name={movieObj.original_title}
               key={movieObj.id}
+              handleAddToWatchList={handleAddToWatchList}
+              handleDeleteFromWatchlist={handleDeleteFromWatchlist}
             />
           );
         })}
