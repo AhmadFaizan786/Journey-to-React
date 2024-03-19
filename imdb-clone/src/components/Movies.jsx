@@ -3,8 +3,12 @@ import MovieCard from "./MovieCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Pagination from "./Pagination";
+import { useWatchList } from "../Contexts/WatchlistContext";
 
-function Movies({handleAddToWatchList, handleDeleteFromWatchlist,watchlist}) {
+function Movies() {
+  //using context api- WatchlistContext
+  const { watchlist, handleAddToWatchList, handleDeleteFromWatchlist} = useWatchList(); // Use the hook to access the context
+
   const [movies, setmovies] = useState([]);
   const [pageNo, setpageNo] = useState(1);
 
@@ -37,7 +41,7 @@ function Movies({handleAddToWatchList, handleDeleteFromWatchlist,watchlist}) {
         {movies.map((movieObj) => {
           return (
             <MovieCard
-            watchlist={watchlist}
+              watchlist={watchlist}
               movieObj={movieObj}
               poster_path={movieObj.poster_path}
               name={movieObj.original_title}
