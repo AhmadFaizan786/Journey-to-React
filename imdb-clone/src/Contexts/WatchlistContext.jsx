@@ -1,5 +1,11 @@
 // WatchListContext.js
-import React, { createContext, useContext, useState, useEffect, useCallback} from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 
 // Create a context
 const WatchListContext = createContext();
@@ -9,26 +15,41 @@ export const WatchListProvider = ({ children }) => {
   const [watchlist, setWatchList] = useState([]);
 
   useEffect(() => {
-    const moviesFromLocalStorage = localStorage.getItem('moviesApp');
+    const moviesFromLocalStorage = localStorage.getItem("moviesApp");
     if (moviesFromLocalStorage) {
       setWatchList(JSON.parse(moviesFromLocalStorage));
     }
   }, []);
 
-  const handleAddToWatchList = useCallback((movieObj) => {
-    const newWatchList = [...watchlist, movieObj];
-    localStorage.setItem('moviesApp', JSON.stringify(newWatchList));
-    setWatchList(newWatchList);
-  },[watchlist]);
+  const handleAddToWatchList = useCallback(
+    (movieObj) => {
+      const newWatchList = [...watchlist, movieObj];
+      localStorage.setItem("moviesApp", JSON.stringify(newWatchList));
+      setWatchList(newWatchList);
+    },
+    [watchlist]
+  );
 
-  const handleDeleteFromWatchlist = useCallback((movieObj) => {
-    const filteredWatchList = watchlist.filter((movie) => movie.id !== movieObj.id);
-    localStorage.setItem('moviesApp', JSON.stringify(filteredWatchList));
-    setWatchList(filteredWatchList);
-  },[watchlist]);
+  const handleDeleteFromWatchlist = useCallback(
+    (movieObj) => {
+      const filteredWatchList = watchlist.filter(
+        (movie) => movie.id !== movieObj.id
+      );
+      localStorage.setItem("moviesApp", JSON.stringify(filteredWatchList));
+      setWatchList(filteredWatchList);
+    },
+    [watchlist]
+  );
 
   return (
-    <WatchListContext.Provider value={{ watchlist, handleAddToWatchList, handleDeleteFromWatchlist }}>
+    <WatchListContext.Provider
+      value={{
+        watchlist,
+        setWatchList,
+        handleAddToWatchList,
+        handleDeleteFromWatchlist,
+      }}
+    >
       {children}
     </WatchListContext.Provider>
   );
